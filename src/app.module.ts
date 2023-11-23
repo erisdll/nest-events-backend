@@ -3,11 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { EventsController } from './events/events.controller';
 import { EventsModule } from './events/events.module';
-import { ExampleModule } from './example/example.module';
+import { EventsService } from './events/events.service';
 
 @Module({
-  imports: [EventsModule, EventsModule, ExampleModule],
+  imports: [EventsModule],
   controllers: [AppController, EventsController],
-  providers: [AppService],
+  providers: [AppService, EventsService],
 })
 export class AppModule {}
