@@ -4,10 +4,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Event } from './events/entities/event.entity';
 import { EventsModule } from './events/events.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
-    EventsModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: '127.0.0.1',
@@ -18,6 +18,8 @@ import { EventsModule } from './events/events.module';
       entities: [Event],
       synchronize: true,
     }),
+    EventsModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
